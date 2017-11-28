@@ -77,11 +77,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div class="tab-pane fade in active" id="rangkuman">
-                                            <h4>Rangkuman</h4>
+                                            <h4>Home Tab</h4>
                                             <?= $jumlahUser ?>
                                         </div>
                                         <div class="tab-pane fade" id="semua-user">
-                                            <h4>Semua User</h4>
+                                            <h4>Profile Tab</h4>
                                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                                 <thead>
                                                     <tr>
@@ -108,65 +108,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                 ?>
                                                             </td>
                                                             <td><?= $i->dibuat; ?></td>
-                                                            <td>
-                                                                <button name="detail" id="detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-                                                                    Detail
-                                                                </button>
-                                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalHapus">
-                                                                    Hapus
-                                                                </button>
-                                                            </td>
+                                                            <td>Detail Edit Hapus</td>
                                                         </tr>
                                                     <?php }; ?>
                                                 </tbody>
                                             </table>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.modal-content -->
-                                                </div>
-                                                <!-- /.modal-dialog -->
-                                            </div>
-                                            <!-- /.modal -->
-                                            
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                            <h4 class="modal-title" id="myModalLabel">Hapus User</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Anda yakin ingin menghapus user ini?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                                            <button type="button" class="btn btn-danger">Hapus</button>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.modal-content -->
-                                                </div>
-                                                <!-- /.modal-dialog -->
-                                            </div>
-                                            <!-- /.modal -->
                                         </div>
                                         <div class="tab-pane fade" id="tambah-user">
-                                            <h4>Tambah User</h4>
+                                            <h4>Messages Tab</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -206,19 +155,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $('#dataTables-example').DataTable({
                     responsive: true
                 });
-            });
-            
-            $('#detail').click(function(){
-               $.ajax({
-                   url: '<?= base_url('admin/user/getDetail'); ?>',
-                   type: 'POST',
-                   dataType: 'json',
-                   error: function(){
-                       $('#result_table').append('<p>Good By World</p>');
-                    }),
-                    success: function(result){
-                        $('#result_table').append('<p>Hello World')
-                    }
             });
         </script>
     </body>

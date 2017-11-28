@@ -1,25 +1,14 @@
 <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                    <!-- /input-group -->
+                <li>
+                    <a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="<?= base_url('admin/user'); ?>"><i class="fa fa-users fa-fw"></i> User</a>
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> User</a>
-                </li>
-                <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Produk</a>
+                    <a href="<?= base_url('admin/produk'); ?>"><i class="fa fa-shopping-bag fa-fw"></i> Produk</a>
                 </li>
             </ul>
         </div>

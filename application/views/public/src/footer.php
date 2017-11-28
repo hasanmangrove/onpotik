@@ -21,10 +21,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-3 w3_footer_grid">
                 <h3>Informasi</h3>
                 <ul class="info"> 
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">Tentang Kami</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Hubungi Kami</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">FAQ's</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Produk Spesial</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/tentang'); ?>">Tentang Kami</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/kontak'); ?>">Hubungi Kami</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/faq'); ?>">FAQ's</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/penawaran'); ?>">Produk Spesial</a></li>
                 </ul>
             </div>
             <div class="col-md-3 w3_footer_grid">
@@ -38,10 +38,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-3 w3_footer_grid">
                 <h3>Profil</h3>
                 <ul class="info"> 
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Toko</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/produk2'); ?>">Toko</a></li>
                     <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">Keranjang</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Masuk</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Buat Akun</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('login'); ?>">Masuk</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('daftar'); ?>">Buat Akun</a></li>
                 </ul>
             </div>
             <div class="clearfix"> </div>

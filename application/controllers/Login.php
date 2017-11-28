@@ -9,6 +9,7 @@ class Login extends MyController {
     }
 
     function index() {
+        $this->load->helper('user_helper');
         $this->load->view('public/login');
     }
 
@@ -38,7 +39,7 @@ class Login extends MyController {
                 } elseif ($this->session->userdata('level') == 'apoteker') {
                     redirect('apoteker/dashboard');
                 } elseif ($this->session->userdata('level') == 'customer') {
-                    redirect();
+                    redirect('customer/profil');
                 }
             } else {
                 echo "<script>alert('Gagal Login: Cek username , password!');history.go(-1);</script>";

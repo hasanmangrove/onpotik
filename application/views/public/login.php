@@ -62,11 +62,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="login">
             <div class="container">
                 <h2>Form Login</h2>
-
                 <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
-                    <form>
-                        <input type="email" placeholder="Email Address" required=" " >
-                        <input type="password" placeholder="Password" required=" " >
+                    <form method="post" action="<?= base_url('login/cek_login'); ?>">
+                        <input type="username" name="username" placeholder="Username" required=" " >
+                        <input type="password" name="password" placeholder="Password" required=" " >
                         <div class="forgot">
                             <a href="#">Lupa Password?</a>
                         </div>

@@ -11,4 +11,12 @@ class User_Model extends CI_Model{
     public function cek_user($data){
         return $this->db->get_where('user', $data);
     }
+    
+    public function getSemuaUser(){
+        return $this->db->get('user')->result();
+    }
+    
+    public function hitungSemuaUser(){
+        return $this->db->count_all('user');
+    }
 }
