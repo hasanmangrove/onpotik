@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">User</h1>
+                            <h1 class="page-header">Produk</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Tab Menejemen User
+                                    Tab Menejemen Produk
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
@@ -68,54 +68,229 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#rangkuman" data-toggle="tab">Rangkuman</a>
                                         </li>
-                                        <li><a href="#semua-user" data-toggle="tab">Semua User</a>
+                                        <li><a href="#semua-produk" data-toggle="tab">Semua Produk</a>
                                         </li>
-                                        <li><a href="#tambah-user" data-toggle="tab">Tambah User</a>
+                                        <li><a href="#tambah-produk" data-toggle="tab">Tambah Produk</a>
                                         </li>
                                     </ul>
 
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div class="tab-pane fade in active" id="rangkuman">
-                                            <h4>Home Tab</h4>
-                                            <?= $jumlahUser ?>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-6">
+                                                    <div class="panel panel-primary">
+                                                        <div class="panel-heading">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    <i class="fa fa-cubes fa-5x"></i>
+                                                                </div>
+                                                                <div class="col-xs-9 text-right">
+                                                                    <div class="huge">26</div>
+                                                                    <div>Jumlah Produk</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="#">
+                                                            <div class="panel-footer">
+                                                                <span class="pull-left">Lihat Detail</span>
+                                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <div class="panel panel-green">
+                                                        <div class="panel-heading">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    <i class="fa fa-cube fa-5x"></i>
+                                                                </div>
+                                                                <div class="col-xs-9 text-right">
+                                                                    <div class="huge">12</div>
+                                                                    <div>Produk Baru</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="#">
+                                                            <div class="panel-footer">
+                                                                <span class="pull-left">Lihat Detail</span>
+                                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <div class="panel panel-yellow">
+                                                        <div class="panel-heading">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    <i class="fa fa-list fa-5x"></i>
+                                                                </div>
+                                                                <div class="col-xs-9 text-right">
+                                                                    <div class="huge">124</div>
+                                                                    <div>Jenis Produk</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="#">
+                                                            <div class="panel-footer">
+                                                                <span class="pull-left">Lihat Detail</span>
+                                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <div class="panel panel-red">
+                                                        <div class="panel-heading">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    <i class="fa fa-inbox fa-5x"></i>
+                                                                </div>
+                                                                <div class="col-xs-9 text-right">
+                                                                    <div class="huge">13</div>
+                                                                    <div>Produk Habis</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="#">
+                                                            <div class="panel-footer">
+                                                                <span class="pull-left">Lihat Detail</span>
+                                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="tab-pane fade" id="semua-user">
-                                            <h4>Profile Tab</h4>
+                                        <div class="tab-pane fade" id="semua-produk">
+                                            <br>
                                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                                 <thead>
                                                     <tr>
-                                                        <th>Username</th>
-                                                        <th>Email</th>
-                                                        <th>Level</th>
-                                                        <th>Status</th>
-                                                        <th>Dibuat</th>
+                                                        <th>Nama</th>
+                                                        <th>Jenis</th>
+                                                        <th>Harga</th>
+                                                        <th>Stok</th>
                                                         <th>Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php foreach ($user as $i) { ?>
+                                                    <?php foreach ($produk as $i) { ?>
                                                         <tr>
-                                                            <td><?= $i->username; ?></td>
-                                                            <td><?= $i->email; ?></td>
-                                                            <td><?= $i->level; ?></td>
-                                                            <td><?php
-                                                                if ($i->status === '1') {
-                                                                    echo 'Aktif';
-                                                                } else {
-                                                                    echo 'Nonaktif';
-                                                                };
-                                                                ?>
+                                                            <td><?= $i->nama; ?></td>
+                                                            <td><?= $i->jenis_produk; ?></td>
+                                                            <td><?= $i->harga; ?></td>
+                                                            <td><?= $i->stok; ?></td>
+                                                            <td>
+                                                                <button name="detail" id="detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                                                    Detail
+                                                                </button>
+                                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalHapus">
+                                                                    Hapus
+                                                                </button>
                                                             </td>
-                                                            <td><?= $i->dibuat; ?></td>
-                                                            <td>Detail Edit Hapus</td>
                                                         </tr>
                                                     <?php }; ?>
                                                 </tbody>
                                             </table>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel">Nama Produk</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div><img src="#">Gambar</div>
+                                                            <p><label>Harga: </label>xxx</p>
+                                                            <p><label>Stok: </label>xxx</p>
+                                                            <p><label>Jenis: </label>xxx</p>
+                                                            <p><label>Tag: </label>xxx</p>
+                                                            <p><label>Deskripsi: </label>xxx</p>
+                                                            <p><label>Dibuat: </label>xxx</p>
+                                                            <p><label>Terakhir Diperbarui: </label>xxx</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <form>
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                <h4 class="modal-title" id="myModalLabel">Hapus Produk</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Anda yakin ingin menghapus produk ini?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
                                         </div>
-                                        <div class="tab-pane fade" id="tambah-user">
-                                            <h4>Messages Tab</h4>
+                                        <div class="tab-pane fade" id="tambah-produk">
+                                            <br>
+                                            <?= $error; ?>
+                                            <?= form_open_multipart(base_url('admin/produk/aksi_tambah')); ?>
+                                            <div class="form-group">
+                                                <label>Nama</label>
+                                                <input class="form-control" name="nama">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jenis Produk</label>
+                                                <select class="form-control" name="jenis_produk">
+                                                    <option value="obat">Obat</option>
+                                                    <option value="alat kesehatan">Alat Kesehatan</option>
+                                                    <option value="suplemen dan vitamin">Suplemen dan Vitamin</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Harga</label>
+                                                <input class="form-control" name="harga">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Stok</label>
+                                                <input class="form-control" name="stok">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Deskripsi</label>
+                                                <input class="form-control" name="deskripsi">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tag</label>
+                                                <input class="form-control" name="tag">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Gambar</label>
+                                                <input type="file" name="gambar">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
+                                            <button type="reset" class="btn btn-warning">Reset</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

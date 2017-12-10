@@ -34,5 +34,13 @@ class User extends MyController {
             'level' => $this->input->post('level')
         );
         
+        $this->User_Model->tambahUser($user, 'user');
+        redirect('admin/user');
+    }
+    
+    //  ajax
+    public function ajax_edit($id) {
+        $data['userEdit'] = $this->User_Model->getById($id);
+        echo json_encode($data);
     }
 }

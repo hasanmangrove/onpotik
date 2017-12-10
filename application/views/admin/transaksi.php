@@ -6,6 +6,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   Kelompok 4 - Ardi | Didik | Irsalina | Hasan | Faisal
  */
 ?>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+/*
+  ONPOTIK - Online Apotik
+  Sistem Informasi Apotik Online
+  Kelompok 4 - Ardi | Didik | Irsalina | Hasan | Faisal
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">User</h1>
+                            <h1 class="page-header">Transaksi</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -64,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Tab Menejemen User
+                                    Tab Menejemen Transaksi
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
@@ -72,9 +80,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#rangkuman" data-toggle="tab">Rangkuman</a>
                                         </li>
-                                        <li><a href="#semua-user" data-toggle="tab">Semua User</a>
+                                        <li><a href="#semua-user" data-toggle="tab">Semua Transaksi</a>
                                         </li>
-                                        <li><a href="#tambah-user" data-toggle="tab">Tambah Admin</a>
+                                        <li><a href="#tambah-user" data-toggle="tab">Verifikasi Transaksi</a>
                                         </li>
                                     </ul>
 
@@ -88,11 +96,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <div class="panel-heading">
                                                             <div class="row">
                                                                 <div class="col-xs-3">
-                                                                    <i class="fa fa-users fa-5x"></i>
+                                                                    <i class="fa fa-shopping-cart fa-5x"></i>
                                                                 </div>
                                                                 <div class="col-xs-9 text-right">
                                                                     <div class="huge">26</div>
-                                                                    <div>Jumlah User</div>
+                                                                    <div>Jumlah Transaksi Bulan Ini</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -110,11 +118,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <div class="panel-heading">
                                                             <div class="row">
                                                                 <div class="col-xs-3">
-                                                                    <i class="fa fa-user fa-5x"></i>
+                                                                    <i class="fa fa-shopping-bag fa-5x"></i>
                                                                 </div>
                                                                 <div class="col-xs-9 text-right">
                                                                     <div class="huge">12</div>
-                                                                    <div>User Baru</div>
+                                                                    <div>Transaksi Baru Hari ini</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -132,11 +140,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <div class="panel-heading">
                                                             <div class="row">
                                                                 <div class="col-xs-3">
-                                                                    <i class="fa fa-play fa-5x"></i>
+                                                                    <i class="fa fa-spinner fa-5x"></i>
                                                                 </div>
                                                                 <div class="col-xs-9 text-right">
                                                                     <div class="huge">124</div>
-                                                                    <div>User Aktif</div>
+                                                                    <div>Transaksi Belum Terverikasi</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -158,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                 </div>
                                                                 <div class="col-xs-9 text-right">
                                                                     <div class="huge">13</div>
-                                                                    <div>User Nonaktif</div>
+                                                                    <div>Produk Belum Tiba</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -203,12 +211,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                             <td><?= $i->email; ?></td>
                                                             <td><?= $i->level; ?></td>
                                                             <td><?php
-                                                                if ($i->status === '1') {
-                                                                    echo 'Aktif';
-                                                                } else {
-                                                                    echo 'Nonaktif';
-                                                                };
-                                                                ?>
+                                                        if ($i->status === '1') {
+                                                            echo 'Aktif';
+                                                        } else {
+                                                            echo 'Nonaktif';
+                                                        };
+                                                        ?>
                                                             </td>
                                                             <td><?= $i->dibuat; ?></td>
                                                             <td>
