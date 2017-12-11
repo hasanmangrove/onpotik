@@ -11,9 +11,13 @@ class Pengaturan extends MyController {
 
     public function __construct() {
         parent::__construct();
+        if($this->session->userdata('level') !== 'admin'){
+            redirect();
+        }
     }
 
     function index() {
+        $this->data['profil_user'] = $this->db->get_where('user', array('username' => $this->session->userdata('username')))->result();
         $this->data['apotik'] = $this->db->get('apotik')->result();
         $this->load->view('admin/pengaturan', $this->data);
     }
@@ -39,6 +43,20 @@ class Pengaturan extends MyController {
         redirect('admin/pengaturan');
     }
 
+    function aksi_edit_profil() {
+        $profil = array(
+            'nama_depan' => $this->input->post('nama_depan'),
+            'nama_belakang' => $this->input->post('nama_belakang'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'alamat' => $this->input->post('alamat'),
+            'tgl_lahir' => $this->input->post('tgl_lahir'),
+            'kontak' => $this->input->post('kontak'),
+        );
+        
+        $this->db->update('user', $profil, array('username' => $this->session->userdata('username')));
+        redirect('admin/pengaturan');
+    }
+
     function aksi_ubah_password() {
         $this->load->model('User_Model');
         $this->load->helper('user_helper');
@@ -50,10 +68,10 @@ class Pengaturan extends MyController {
         if ($password_crypt == crypt($password_login['password'], $password_crypt)) {
             echo 'cocok';
             $this->db->update(
-                    'user',
-                    array('password' => bCrypt($this->input->post('password_baru'), 12)),
-                    array('username='.$this->session->userdata('username'))
-                    );
+                    'user', array('password' => bCrypt($this->input->post('password_baru'), 12)), array('username=' . $this->session->userdata('username'))
+            );
+
+            redirect('admin/pengaturan');
         } else {
             echo "<script>alert('Password ');history.go(-1);</script>";
         }

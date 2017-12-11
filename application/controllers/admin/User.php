@@ -10,6 +10,9 @@ Kelompok 4 - Ardi | Didik | Irsalina | Hasan | Faisal
 class User extends MyController {
     public function __construct() {
         parent::__construct();
+        if($this->session->userdata('level') !== 'admin'){
+            redirect();
+        }
         $this->load->model('User_Model');
     }
     

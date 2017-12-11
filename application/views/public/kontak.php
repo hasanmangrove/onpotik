@@ -74,11 +74,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="agileits_w3layouts_map_pos">
                         <div class="agileits_w3layouts_map_pos1">
-                            <h3>Contact Info</h3>
-                            <p>1234k Avenue, 4th block, New York City.</p>
+                            <h3>Informasi Kontak</h3>
+                            <p><?= $alamat_website; ?></p>
                             <ul class="wthree_contact_info_address">
-                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i>+(0123) 232 232</li>
+                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:<?= $email_website; ?>"><?= $email_website; ?></a></li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i><?= $kontak_website; ?></li>
                             </ul>
                             <div class="w3_agile_social_icons w3_agile_social_icons_contact">
                                 <ul>
@@ -89,26 +89,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 w3_agileits_contact_grid_right">
-                    <h2 class="w3_agile_header">Leave a<span> Message</span></h2>
-
-                    <form action="#" method="post">
-                        <span class="input input--ichiro">
-                            <input class="input__field input__field--ichiro" type="text" id="input-25" name="Name" placeholder=" " required="" />
-                            <label class="input__label input__label--ichiro" for="input-25">
-                                <span class="input__label-content input__label-content--ichiro">Your Name</span>
-                            </label>
-                        </span>
-                        <span class="input input--ichiro">
-                            <input class="input__field input__field--ichiro" type="email" id="input-26" name="Email" placeholder=" " required="" />
-                            <label class="input__label input__label--ichiro" for="input-26">
-                                <span class="input__label-content input__label-content--ichiro">Your Email</span>
-                            </label>
-                        </span>
-                        <textarea name="Message" placeholder="Your message here..." required=""></textarea>
-                        <input type="submit" value="Submit">
-                    </form>
                 </div>
                 <div class="clearfix"> </div>
             </div>

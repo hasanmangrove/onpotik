@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   Kelompok 4 - Ardi | Didik | Irsalina | Hasan | Faisal
  */
 
-$sub1 = $this->uri->segment(2);
+$sub1 = $this->uri->segment(1);
 ?>
 <div class="breadcrumbs">
     <div class="container">

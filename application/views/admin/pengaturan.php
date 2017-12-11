@@ -80,6 +80,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#profil_toko" data-toggle="tab">Profil Toko</a>
                                         </li>
+                                        <li><a href="#profil_user" data-toggle="tab">Profil User</a>
+                                        </li>
                                         <li><a href="#ubah_password" data-toggle="tab">Ubah Password</a>
                                         </li>
                                     </ul>
@@ -140,6 +142,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <div class="form-group">
                                                     <label>Latitude</label>
                                                     <input class="form-control" type="text" name="lat" value="<?= $apotik[0]->lat; ?>">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade in" id="profil_user">
+                                            <br>
+                                            <form action="<?= base_url('admin/pengaturan/aksi_edit_profil'); ?>" method="post">
+                                                <div class="form-group">
+                                                    <label>Nama Depan</label>
+                                                    <input class="form-control" type="text" name="nama_depan" value="<?= $profil_user[0]->nama_depan; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Nama Belakang</label>
+                                                    <input class="form-control" type="text" name="nama_belakang" value="<?= $profil_user[0]->nama_belakang; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jenis Kelamin</label>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="L" checked>Laki-laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="jenis_kelamin" id="optionsRadios2" value="P">Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Alamat</label>
+                                                    <input class="form-control" type="text" name="alamat" value="<?= $profil_user[0]->alamat; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Tanggal Lahir</label>
+                                                    <input class="form-control" type="date" name="tgl_lahir" value="<?= $profil_user[0]->tgl_lahir; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Kontak</label>
+                                                    <input class="form-control" type="number" name="kontak" value="<?= $profil_user[0]->kontak; ?>">
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Update</button>
                                             </form>

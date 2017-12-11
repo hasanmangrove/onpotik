@@ -13,18 +13,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <h3>Kontak</h3>
 
                 <ul class="address">
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><?= $alamat_website; ?></span></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="<?=$email_website;?>"><?= $email_website; ?></a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><?= $kontak_website; ?></li>
                 </ul>
             </div>
             <div class="col-md-3 w3_footer_grid">
                 <h3>Informasi</h3>
                 <ul class="info"> 
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/tentang'); ?>">Tentang Kami</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/kontak'); ?>">Hubungi Kami</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/faq'); ?>">FAQ's</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('beranda/penawaran'); ?>">Produk Spesial</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('tentang'); ?>">Tentang Kami</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('kontak'); ?>">Hubungi Kami</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="<?= base_url('produk'); ?>">Produk</a></li>
                 </ul>
             </div>
             <div class="col-md-3 w3_footer_grid">
@@ -32,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <ul class="info"> 
                     <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="groceries.html">Obat</a></li>
                     <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="household.html">Alat Kesehatan</a></li>
-                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="personalcare.html">Herbal</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="personalcare.html">Suplemen & Vitamin</a></li>
                 </ul>
             </div>
             <div class="col-md-3 w3_footer_grid">
@@ -51,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="footer-copy">
 
         <div class="container">
-            <p>© <?= date('Y'); ?> Onpotik. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            <p>© <?= date('Y'); ?> <?= $nama_website; ?>. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
 

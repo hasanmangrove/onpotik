@@ -24,11 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Mega Menu -->
                     <li><a href="offers.html">Obat</a></li>
                     <li><a href="offers.html">Suplemen & Vitamin</a></li>
-                    <li><a href="offers.html">Nutrisi</a></li>
-                    <li><a href="offers.html">Herbal & Tradisional</a></li>
                     <li><a href="offers.html">Alat Kesehatan</a></li>
-                    <li><a href="<?= base_url('beranda/penawaran'); ?>">Penawaran</a></li>
-                    <li><a href="<?= base_url('beranda/kontak'); ?>">Kontak</a></li>
+                    <li><a href="<?= base_url('tentang'); ?>">Tentang Kami</a></li>
+                    <li><a href="<?= base_url('kontak'); ?>">Kontak</a></li>
                 </ul>
             </div>
         </nav>

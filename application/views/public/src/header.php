@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="agileits_header">
     <div class="container">
         <div class="w3l_offers">
-            <p>Menjual segala macam obat dan keperluan kesehatan. <a href="<?= base_url('produk'); ?>">BELI SEKARANG</a></p>
+            <p><?= $tagline_website; ?> <a href="<?= base_url('produk'); ?>">BELI SEKARANG</a></p>
         </div>
         <div class="agile-login">
             <ul>
@@ -34,12 +34,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <div class="w3ls_logo_products_left1">
             <ul class="phone_email">
-                <li><i class="fa fa-phone" aria-hidden="true"></i>Pemesanan online atau bisa hubungi kami: (+0123) 234 567</li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i>Pemesanan online atau bisa hubungi kami: <?= $kontak_website; ?></li>
 
             </ul>
         </div>
         <div class="w3ls_logo_products_left">
-            <h1><a href="<?= base_url(); ?>">Onpotik</a></h1>
+            <h1><a href="<?= base_url(); ?>"><?= $nama_website; ?></a></h1>
         </div>
         <div class="w3l_search">
             <form action="#" method="post">

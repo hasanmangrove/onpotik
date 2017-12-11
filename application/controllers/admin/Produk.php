@@ -10,6 +10,9 @@ Kelompok 4 - Ardi | Didik | Irsalina | Hasan | Faisal
 class Produk extends MyController{
     public function __construct() {
         parent::__construct();
+        if($this->session->userdata('level') !== 'admin'){
+            redirect();
+        }
         $this->load->helper('form');
     }
     
