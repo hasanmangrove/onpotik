@@ -204,32 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <th>Aksi</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <?php foreach ($user as $i) { ?>
-                                                        <tr>
-                                                            <td><?= $i->username; ?></td>
-                                                            <td><?= $i->email; ?></td>
-                                                            <td><?= $i->level; ?></td>
-                                                            <td><?php
-                                                        if ($i->status === '1') {
-                                                            echo 'Aktif';
-                                                        } else {
-                                                            echo 'Nonaktif';
-                                                        };
-                                                        ?>
-                                                            </td>
-                                                            <td><?= $i->dibuat; ?></td>
-                                                            <td>
-                                                                <button name="detail" id="detail" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-                                                                    Detail
-                                                                </button>
-                                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalHapus">
-                                                                    Hapus
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                    <?php }; ?>
-                                                </tbody>
+
                                             </table>
 
                                             <!-- Modal -->

@@ -93,23 +93,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <form action="<?= base_url('admin/pengaturan/aksi_edit_toko'); ?>" method="post">
                                                 <div class="form-group">
                                                     <label>Nama Toko</label>
-                                                    <input class="form-control" type="text" name="nama" value="<?= $apotik[0]->nama; ?>">
+                                                    <input class="form-control" type="text" name="nama" value="<?= $apotik[0]->nama_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Tagline</label>
-                                                    <input class="form-control" type="text" name="tagline" value="<?= $apotik[0]->tagline; ?>">
+                                                    <input class="form-control" type="text" name="tagline" value="<?= $apotik[0]->tagline_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Deskripsi</label>
-                                                    <input class="form-control" type="text" name="deskripsi" value="<?= $apotik[0]->deskripsi; ?>">
+                                                    <input class="form-control" type="text" name="deskripsi" value="<?= $apotik[0]->deskripsi_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Kontak</label>
-                                                    <input class="form-control" type="number" name="kontak" value="<?= $apotik[0]->kontak; ?>">
+                                                    <input class="form-control" type="number" name="kontak" value="<?= $apotik[0]->kontak_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Alamat</label>
-                                                    <input class="form-control" type="text" name="alamat" value="<?= $apotik[0]->alamat; ?>">
+                                                    <input class="form-control" type="text" name="alamat" value="<?= $apotik[0]->alamat_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nama Bank Rekening 1</label>
@@ -137,11 +137,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Longitude</label>
-                                                    <input class="form-control" type="text" name="long" value="<?= $apotik[0]->long; ?>">
+                                                    <input class="form-control" type="text" name="long" value="<?= $apotik[0]->long_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Latitude</label>
-                                                    <input class="form-control" type="text" name="lat" value="<?= $apotik[0]->lat; ?>">
+                                                    <input class="form-control" type="text" name="lat" value="<?= $apotik[0]->lat_website; ?>">
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Update</button>
                                             </form>

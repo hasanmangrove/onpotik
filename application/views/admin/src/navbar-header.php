@@ -5,5 +5,5 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-    <a class="navbar-brand" href="<?= base_url(); ?>"><?= 'Admin '.$namaWebsite; ?></a>
+    <a class="navbar-brand" href="<?= base_url(); ?>"><?= 'Admin '.$nama_website; ?></a>
     </div>

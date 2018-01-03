@@ -10,7 +10,7 @@ class Login extends MyController {
 
     function index() {
         $this->load->helper('user_helper');
-        $this->load->view('public/login');
+        $this->load->view('public/login', $this->data);
     }
 
     public function cek_login() {

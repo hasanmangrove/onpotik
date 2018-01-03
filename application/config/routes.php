@@ -53,4 +53,4 @@ $route['default_controller'] = 'beranda';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin'] = 'admin/dashboard'; 
+$route['admin'] = 'admin/dashboard';

@@ -62,7 +62,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="login">
             <div class="container">
                 <h2>Form Login</h2>
-                <?= bCrypt('12345678', 12); ?>
                 <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
                     <form method="post" action="<?= base_url('login/cek_login'); ?>">
                         <input type="username" name="username" placeholder="Username" required=" " >
