@@ -69,85 +69,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- checkout -->
 <div class="checkout">
     <div class="container">
-        <h2>Your shopping cart contains: <span>3 Products</span></h2>
-        <div class="checkout-right">
-            <table class="timetable_sub">
-                <thead>
+        <h2>Keranjang Anda berisi <span><?php echo $this->cart->total_items(); ?></span> produk</h2>
+        <?php echo form_open('produk/aksi_checkout'); ?>
+
+        <table cellpadding="6" cellspacing="1" style="width:100%" border="0">
+
+            <tr>
+                <th>Jumlah</th>
+                <th>Produk</th>
+                <th style="text-align:right">Harga</th>
+                <th style="text-align:right">Sub-Total</th>
+            </tr>
+
+            <?php $i = 1; ?>
+
+            <?php foreach ($this->cart->contents() as $items): ?>
+
+                <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
+
                 <tr>
-                    <th>No.</th>
-                    <th>Produk</th>
-                    <th>Jumlah</th>
-                    <th>Nama Produk</th>
+                    <td><?php echo $this->cart->format_number($items['qty']); ?></td>
+                    <td>
+                        <?php echo $items['name']; ?>
 
-                    <th>Harga</th>
-                    <th>Hapus</th>
+                        <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+
+                            <p>
+                                <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+
+                                    <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+
+                                <?php endforeach; ?>
+                            </p>
+
+                        <?php endif; ?>
+
+                    </td>
+                    <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
+                    <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
                 </tr>
-                </thead>
-                <?php
-                var_dump($this->cart->contents());
-                $i = 0;
-                foreach ($this->cart->contents() as $item):
-                    echo form_hidden($i . '[rowid]', $item['rowid']);
-                    ?>
-                    <tr>
-                        <td><?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
-                        <td>
-                            <?php echo $items['name']; ?>
 
-                            <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+                <?php $i++; ?>
 
-                                <p>
-                                    <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+            <?php endforeach; ?>
 
-                                        <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br/>
+            <tr>
+                <td colspan="2"> </td>
+                <td class="right"><strong>Total</strong></td>
+                <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+            </tr>
 
-                                    <?php endforeach; ?>
-                                </p>
+        </table>
 
-                            <?php endif; ?>
-
-                        </td>
-                        <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
-                        <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
-                    </tr>
-
-                    <?php
-                    $i++;
-                endforeach;
-                ?>
-                <!--quantity-->
-                <script>
-                    $('.value-plus').on('click', function () {
-                        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) + 1;
-                        divUpd.text(newVal);
-                    });
-
-                    $('.value-minus').on('click', function () {
-                        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) - 1;
-                        if (newVal >= 1)
-                            divUpd.text(newVal);
-                    });
-                </script>
-                <!--quantity-->
-            </table>
-        </div>
-        <div class="checkout-left">
-            <div class="checkout-left-basket">
-                <h4>Continue to basket</h4>
-                <ul>
-                    <li>Product1 <i>-</i> <span>$15.00 </span></li>
-                    <li>Product2 <i>-</i> <span>$25.00 </span></li>
-                    <li>Product3 <i>-</i> <span>$29.00 </span></li>
-                    <li>Total Service Charges <i>-</i> <span>$15.00</span></li>
-                    <li>Total <i>-</i> <span>$84.00</span></li>
-                </ul>
-            </div>
-            <div class="checkout-right-basket">
-                <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue
-                    Shopping</a>
-            </div>
-            <div class="clearfix"></div>
-        </div>
+        <p><?php echo form_submit('', 'Proses', 'class="btn btn-lg btn-success"'); ?></p>
     </div>
 </div>
 <!-- //checkout -->

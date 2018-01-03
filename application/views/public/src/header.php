@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="product_list_header">
             <button name="detail" id="detail" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Keranjang  : <?php echo $this->cart->total_items(); ?> Barang
+                Keranjang (<?php if ($this->cart->total_items() == 0){ echo 0;} else { echo $this->cart->total_items();} ?>)
             </button>
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -43,12 +43,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </tr>
                                 </thead>
                                 <tbody id="detail_cart">
+                                <?php $i = 1; ?>
 
+                                <?php foreach ($this->cart->contents() as $items): ?>
+
+                                    <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
+
+                                    <tr>
+                                        <td>
+                                            <?php echo $items['name']; ?>
+
+                                            <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+
+                                                <p>
+                                                    <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+
+                                                        <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+
+                                                    <?php endforeach; ?>
+                                                </p>
+
+                                            <?php endif; ?>
+
+                                        </td>
+                                        <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
+                                        <td><?php echo $this->cart->format_number($items['qty']); ?></td>
+                                        <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+                                    </tr>
+
+                                    <?php $i++; ?>
+
+                                <?php endforeach; ?>
                                 </tbody>
-
                             </table>
                         </div>
                         <div class="modal-footer">
+                            <a type="button" class="btn btn-success" href="<?php echo base_url('produk/checkout'); ?>">Checkout</a>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Keluar</button>
                         </div>
                     </div>

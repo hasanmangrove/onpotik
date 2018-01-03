@@ -21,6 +21,14 @@ class Produk extends MyController
         $this->load->view('public/produk', $this->data);
     }
 
+    function checkout(){
+        $this->load->view('public/checkout', $this->data);
+    }
+
+    function aksi_checkout(){
+        var_dump($this->cart->contents());
+    }
+
     function add_to_cart(){ //fungsi Add To Cart
         $data = array(
             'id' => $this->input->post('produk_id'),
