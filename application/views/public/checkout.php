@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             <?php foreach ($this->cart->contents() as $items): ?>
 
-                <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
+                <?php echo form_hidden($i . '[rowid]', $items['rowid']); ?>
 
                 <tr>
                     <td><?php echo $this->cart->format_number($items['qty']); ?></td>
@@ -97,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <p>
                                 <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
 
-                                    <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+                                    <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br/>
 
                                 <?php endforeach; ?>
                             </p>
@@ -114,14 +114,88 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <?php endforeach; ?>
 
             <tr>
-                <td colspan="2"> </td>
+                <td colspan="2"></td>
                 <td class="right"><strong>Total</strong></td>
                 <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
             </tr>
 
         </table>
+    </div>
+    <br>
+    <div class="container">
+        <input hidden name="origin" id="origin" value="<?php echo $id_kabupaten; ?>">
+        <input hidden name="berat" id="berat" value="100">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tujuan</h3>
+                    </div>
+                    <div class="panel-body">
+                        <label>Provinsi</label>
+                        <select class="form-control" name="propinsi_tujuan" id="propinsi_tujuan">
+                            <option value="" selected="" disabled="">Pilih Provinsi</option>
+                            <?php $this->load->view('public/src/getProvince'); ?>
+                        </select>
+                        <br>
+                        <label>Kabupaten</label>
+                        <select class="form-control" name="destination" id="destination">
+                            <option value="" selected="" disabled="">Pilih Kota</option>
+                        </select>
+                        <br>
+                        <label>Kurir</label>
+                        <select class="form-control" name="courier" id="courier">
+                            <option value="jne">JNE</option>
+                            <option value="pos" selected>POS</option>
+                            <option value="tiki">TIKI</option>
+                        </select>
+                        <br>
+                        <button type="button" onclick="tampil_data('data')" class="btn btn-info">Cek Ongkir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Hasil</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <div id="hasil">
 
-        <p><?php echo form_submit('', 'Proses', 'class="btn btn-lg btn-success"'); ?></p>
+                            </div>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <script>
+                    function tampil_data(act) {
+                        var w = $('#origin').val();
+                        var x = $('#destination').val();
+                        var y = $('#berat').val();
+                        var z = $('#courier').val();
+
+                        $.ajax({
+                            url: "getCost",
+                            type: "GET",
+                            data: {origin: w, destination: x, berat: y, courier: z},
+                            success: function (ajaxData) {
+                                //$('#tombol_export').show();
+                                //$('#hasilReport').show();
+                                $("#hasil").html(ajaxData);
+                            }
+                        });
+                    };
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <center><p><?php echo form_submit('', 'Proses', 'class="btn btn-block btn-lg btn-success"'); ?></p></center>
     </div>
 </div>
 <!-- //checkout -->
@@ -177,6 +251,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             $('#responsive_wrapper').width(jQuery(this).val());
         });
 
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#propinsi_asal").click(function () {
+            $.post("<?php echo base_url(); ?>index.php/produk/getCity/" + $('#propinsi_asal').val(), function (obj) {
+                $('#origin').html(obj);
+            });
+
+        });
+
+        $("#propinsi_tujuan").click(function () {
+            $.post("<?php echo base_url(); ?>index.php/produk/getCity/" + $('#propinsi_tujuan').val(), function (obj) {
+                $('#destination').html(obj);
+            });
+
+        });
     });
 </script>
 <!-- //main slider-banner -->

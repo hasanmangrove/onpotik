@@ -8,108 +8,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <div class="brands">
     <div class="container">
-        <h3>Brand Store</h3>
-        <div class="brands-agile">
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="brands-agile-1">
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="brands-agile-2">
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="col-md-2 w3layouts-brand">
-                <div class="brands-w3l">
-                    <p><a href="#">Lorem</a></p>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
+        <center>
+          <h1 class="display-4">Hello, world!</h1>
+          <hr class="my-4">
+          <p class="lead">Kemudahan Membeli Obat Secara Cepat dan Praktis</p>
+          <p class="lead">
+            <br>
+            <a class="btn btn-warning btn-lg btn-block" href="#" role="button">Beli Obat</a>
+          </p>
+        </center>
     </div>
 </div>

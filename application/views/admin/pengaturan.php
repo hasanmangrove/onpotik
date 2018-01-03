@@ -93,23 +93,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <form action="<?= base_url('admin/pengaturan/aksi_edit_toko'); ?>" method="post">
                                                 <div class="form-group">
                                                     <label>Nama Toko</label>
-                                                    <input class="form-control" type="text" name="nama" value="<?= $apotik[0]->nama_website; ?>">
+                                                    <input class="form-control" type="text" name="nama_website" value="<?= $apotik[0]->nama_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Tagline</label>
-                                                    <input class="form-control" type="text" name="tagline" value="<?= $apotik[0]->tagline_website; ?>">
+                                                    <input class="form-control" type="text" name="tagline_website" value="<?= $apotik[0]->tagline_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Deskripsi</label>
-                                                    <input class="form-control" type="text" name="deskripsi" value="<?= $apotik[0]->deskripsi_website; ?>">
+                                                    <input class="form-control" type="text" name="deskripsi_website" value="<?= $apotik[0]->deskripsi_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Kontak</label>
-                                                    <input class="form-control" type="number" name="kontak" value="<?= $apotik[0]->kontak_website; ?>">
+                                                    <input class="form-control" type="number" name="kontak_website" value="<?= $apotik[0]->kontak_website; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Provinsi</label>
+                                                    <select name="id_provinsi" class="form-control" name="propinsi_asal" id="propinsi_asal">
+                                                        <option value="" selected="" disabled="">Pilih Provinsi</option>
+                                                        <?php $this->load->view('public/src/getProvince'); ?>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Kabupaten</label>
+                                                    <select name="id_kabupaten" class="form-control" name="origin" id="origin">
+                                                        <option value="" selected="" disabled="">Pilih Kabupaten</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Alamat</label>
-                                                    <input class="form-control" type="text" name="alamat" value="<?= $apotik[0]->alamat_website; ?>">
+                                                    <input class="form-control" type="text" name="alamat_website" value="<?= $apotik[0]->alamat_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nama Bank Rekening 1</label>
@@ -137,11 +150,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Longitude</label>
-                                                    <input class="form-control" type="text" name="long" value="<?= $apotik[0]->long_website; ?>">
+                                                    <input class="form-control" type="text" name="long_website" value="<?= $apotik[0]->long_website; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Latitude</label>
-                                                    <input class="form-control" type="text" name="lat" value="<?= $apotik[0]->lat_website; ?>">
+                                                    <input class="form-control" type="text" name="lat_website" value="<?= $apotik[0]->lat_website; ?>">
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Update</button>
                                             </form>
@@ -260,6 +273,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 success: function (result) {
                     $('#result_table').append('<p>Hello World')
                 }
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+
+                $("#propinsi_asal").click(function(){
+                    $.post("<?php echo base_url(); ?>index.php/produk/getCity/"+$('#propinsi_asal').val(),function(obj){
+                        $('#origin').html(obj);
+                    });
+
+                });
+
+                $("#propinsi_tujuan").click(function(){
+                    $.post("<?php echo base_url(); ?>index.php/produk/getCity/"+$('#propinsi_tujuan').val(),function(obj){
+                        $('#destination').html(obj);
+                    });
+
+                });
             });
         </script>
     </body>

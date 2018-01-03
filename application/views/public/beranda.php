@@ -59,9 +59,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <?php require_once 'src/main-slider.php'; ?>
         <!-- //main-slider -->
         <!-- //top-header and slider -->
+        
         <!-- top-brands -->
-        <?php require_once 'src/top-brands.php'; ?>
+        <?php require_once 'src/brands.php'; ?>
+        <!-- <?php require_once 'src/top-brands.php'; ?> -->        
         <!-- //top-brands -->
+        
         <!-- Carousel
            ================================================== -->
         <?php require_once 'src/carousel.php'; ?>
@@ -70,11 +73,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <?php require_once 'src/banner-bottom.php'; ?>
         <!--banner-bottom-->
         <!--brands-->
-        <?php require_once 'src/brands.php'; ?>	
+        <!-- <?php require_once 'src/brands.php'; ?>	 -->
         <!--//brands-->
+
         <!-- new -->
-        <?php require_once 'src/new.php'; ?>
+        <!-- <?php require_once 'src/new.php'; ?> -->
         <!-- //new -->
+        
         <!-- //footer -->
         <?php require_once 'src/footer.php'; ?>
         <!-- //footer -->	

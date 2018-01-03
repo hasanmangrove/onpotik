@@ -30,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //for-mobile-apps -->
     <link href="<?= base_url('assets/'); ?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="<?= base_url('assets/'); ?>css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui-1.css"> -->
     <!-- font-awesome icons -->
     <link href="<?= base_url('assets/'); ?>css/font-awesome.css" rel="stylesheet">
     <!-- //font-awesome icons -->
@@ -65,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- breadcrumbs -->
 <?php require_once 'src/breadcrumbs.php'; ?>
 <!-- //breadcrumbs -->
-<!--- products --->
+
 <div class="container"><br/>
     <div class="row">
         <div class="col-md-12">
@@ -74,18 +74,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <img width="200" src="<?php echo base_url().'uploads/'.$row->gambar;?>">
-                            <div class="caption">
-                                <h4><?php echo $row->nama;?></h4>
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <h4><?php echo 'Rp '.number_format($row->harga);?></h4>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <input type="number" name="quantity" id="<?php echo $row->id_produk;?>" value="1" class="quantity form-control">
-                                    </div>
+                            <div class="caption"></div>                            
+                            <div class="row">
+                                <br>
+                                <center><p><?php echo $row->nama;?></p></center>
+                                <br>
+                                <div class="col-md-7">
+                                    <h4><?php echo 'Rp '.number_format($row->harga);?></h4>
                                 </div>
-                                <button class="add_cart btn btn-success btn-block" data-produkid="<?php echo $row->id_produk;?>" data-produknama="<?php echo $row->nama;?>" data-produkharga="<?php echo $row->harga;?>">Add To Cart</button>
+                                <div class="col-md-5">
+                                    <input type="number" name="quantity" id="<?php echo $row->id_produk;?>" value="1" class="quantity form-control">
+                                </div>
                             </div>
+                            <br>
+                            <button class="add_cart btn btn-success btn-block" data-produkid="<?php echo $row->id_produk;?>" data-produknama="<?php echo $row->nama;?>" data-produkharga="<?php echo $row->harga;?>">Add To Cart</button>
                         </div>
                     </div>
                 <?php endforeach;?>
@@ -95,10 +97,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
-<!--- products --->
-<!-- //footer -->
+
+
 <?php require_once 'src/footer.php'; ?>
-<!-- //footer -->
+
 <!-- Bootstrap Core JavaScript -->
 <script src="<?= base_url('assets/'); ?>js/bootstrap.min.js"></script>
 <!-- top-header and slider -->
@@ -152,7 +154,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 }
             });
         });
-
     });
 </script>
 <!-- //main slider-banner -->
